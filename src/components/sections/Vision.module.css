@@ -1,0 +1,138 @@
+.section {
+  background: var(--bg);
+}
+.goal {
+  max-width: 820px;
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+.goalTitle {
+  margin-top: 12px;
+  font-size: clamp(26px, 3.4vw, 44px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--fg-strong);
+}
+.goalBody {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.valuesHead {
+  margin-bottom: 20px;
+}
+.valuesTitle {
+  margin-top: 10px;
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--fg-strong);
+}
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.value {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 26px 24px 28px;
+  background: var(--white);
+}
+.value::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 3px;
+  background: var(--accent);
+}
+.valueNo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--accent);
+}
+.valueTitle {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.valueBody {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--fg-muted);
+}
+
+.roadHead {
+  margin: clamp(56px, 7vw, 96px) 0 24px;
+}
+.roadTitle {
+  margin-top: 10px;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--fg-strong);
+}
+.roadTitle em {
+  font-style: normal;
+  color: var(--accent);
+}
+.road {
+  display: grid;
+  border-top: 2px solid var(--fg-strong);
+}
+.roadItem {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.roadStep {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1;
+  color: var(--accent);
+}
+.roadItemTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.roadItemBody {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--fg-muted);
+}
+.closing {
+  margin-top: clamp(32px, 4vw, 48px);
+  padding: 22px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-alt);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.9;
+  color: var(--fg-strong);
+}
+
+@media (max-width: 900px) {
+  .values {
+    grid-template-columns: 1fr;
+  }
+  .roadItem {
+    grid-template-columns: 72px 1fr;
+    gap: 14px;
+  }
+}

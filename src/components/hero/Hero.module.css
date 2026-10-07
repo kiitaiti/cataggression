@@ -1,0 +1,267 @@
+.hero {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-h) + clamp(40px, 6vw, 72px)) 0 clamp(56px, 7vw, 96px);
+  background: var(--bg);
+  overflow: clip;
+  isolation: isolate;
+}
+
+/* ---- 右側の淡い斜めパネル（画面右端まで伸びるが、色を淡くして主張を抑える） ---- */
+.panel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.panelPlane {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 46%;
+  background: var(--bg-alt);
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+}
+/* 紫と黒の細い斜線。Hero の上下を突き抜ける長さにして途切れさせない */
+.line {
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  right: 22%;
+  width: 6px;
+  transform: skewX(-13deg);
+  transform-origin: center;
+}
+.lineAccent {
+  background: var(--accent);
+}
+.lineBlack {
+  width: 2px;
+  background: var(--black);
+  right: calc(22% - 22px);
+}
+.watermarkClip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  height: 60%;
+  overflow: hidden;
+}
+.watermark {
+  position: absolute;
+  left: 4%;
+  bottom: -0.24em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(150px, 19vw, 290px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 20, 0.04);
+  -webkit-text-fill-color: rgba(17, 17, 20, 0.04);
+  white-space: nowrap;
+}
+.vertical {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--fg-muted);
+}
+.emblem {
+  width: 48px;
+  height: auto;
+  margin-bottom: 22px;
+}
+
+/* ---- content ---- */
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - var(--gutter) * 2, var(--container));
+}
+.content {
+  max-width: 76%;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.1s forwards;
+}
+.title {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(50px, 9.6vw, 144px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--fg-strong);
+  text-transform: uppercase;
+}
+.titleLine {
+  display: block;
+  white-space: nowrap;
+  padding-right: 0.08em; /* italic の右端切れ防止 */
+}
+.titleAccent {
+  color: var(--accent);
+}
+.catch {
+  margin-top: 34px;
+  font-size: clamp(26px, 3.2vw, 46px);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--fg-strong);
+}
+.catchMark {
+  background: linear-gradient(var(--accent-soft), var(--accent-soft)) no-repeat 0 78% / 100% 0.42em;
+  padding: 0 0.1em;
+}
+.desc {
+  margin-top: 12px;
+  max-width: 34em;
+  font-size: 15px;
+  color: var(--fg-muted);
+}
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  padding-left: 6px;
+}
+
+/* ---- stats ---- */
+.stats {
+  display: flex;
+  gap: 8px 36px;
+  flex-wrap: wrap;
+  margin: 40px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  max-width: 80%;
+}
+.stats div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.stats dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.stats dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--fg-strong);
+}
+.statText {
+  font-size: 16px !important;
+  letter-spacing: 0.02em;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- tablet ---- */
+@media (max-width: 1100px) {
+  .content {
+    max-width: 80%;
+  }
+  .panelPlane {
+    width: 38%;
+  }
+  .line {
+    right: 16%;
+  }
+  .lineBlack {
+    right: calc(16% - 18px);
+  }
+  .watermark {
+    font-size: 160px;
+  }
+  .vertical {
+    display: none;
+  }
+}
+
+/* ---- mobile: 縦積み。パネルは薄い帯と斜線だけ残す ---- */
+@media (max-width: 760px) {
+  .hero {
+    min-height: 0;
+    padding: calc(var(--header-h) + 28px) 0 clamp(48px, 10vw, 72px);
+  }
+  .content {
+    max-width: none;
+  }
+  .emblem {
+    width: 40px;
+    margin-bottom: 18px;
+  }
+  .title {
+    font-size: clamp(46px, 13vw, 88px);
+  }
+  .catch {
+    font-size: clamp(24px, 6.6vw, 30px);
+    margin-top: 24px;
+  }
+  .actions {
+    margin-top: 24px;
+    padding-left: 4px;
+  }
+  .actions :global(.btn) {
+    flex: 1 1 200px;
+  }
+  .stats {
+    gap: 6px 22px;
+    margin-top: 28px;
+    max-width: none;
+  }
+  .stats dd {
+    font-size: 20px;
+  }
+  .panelPlane {
+    width: 28%;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  /* 文字やボタンと交差して煩雑になるため、スマホでは斜線を出さない */
+  .line {
+    display: none;
+  }
+  .watermark {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation: none;
+    opacity: 1;
+  }
+}

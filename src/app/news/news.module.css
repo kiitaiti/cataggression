@@ -1,0 +1,135 @@
+.page {
+  padding: calc(var(--header-h) + clamp(32px, 5vw, 64px)) 0 clamp(64px, 8vw, 112px);
+}
+.head {
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.filter {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--fg);
+  transform: skewX(var(--skew));
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+}
+.filter > * {
+  transform: skewX(calc(var(--skew) * -1));
+}
+.filter:hover {
+  border-color: var(--fg-strong);
+  color: var(--fg-strong);
+}
+.filterActive,
+.filterActive:hover {
+  color: #fff;
+  background: var(--fg-strong);
+  border-color: var(--fg-strong);
+}
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+.pagination > :last-child {
+  justify-self: end;
+}
+.pageInfo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  color: var(--fg-muted);
+}
+
+/* ---- article ---- */
+.article {
+  padding: calc(var(--header-h) + clamp(32px, 5vw, 64px)) 0 clamp(64px, 8vw, 112px);
+}
+.articleInner {
+  max-width: 760px;
+  margin-inline: auto;
+}
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+}
+.title {
+  margin-top: 14px;
+  font-size: clamp(26px, 3.4vw, 40px);
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.thumb {
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.thumb img {
+  width: 100%;
+  height: auto;
+}
+.body {
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+.related {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+}
+.relatedLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.relatedList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.relatedList a {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--line-strong);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+.relatedList a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.back {
+  margin-top: 40px;
+}

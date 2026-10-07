@@ -1,0 +1,184 @@
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  display: none;
+}
+:global(html.has-custom-cursor) .layer {
+  display: block;
+}
+
+.dot,
+.ring,
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  will-change: transform;
+  transition: opacity 0.25s;
+}
+.dot {
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.dot[data-mode="text"],
+.ring[data-mode="text"] {
+  opacity: 0 !important;
+}
+.dot[data-mode="link"] {
+  transform-origin: center;
+}
+
+.ring {
+  --size: 26px;
+  --gap: 0px;
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+}
+.ring[data-mode="link"] {
+  --gap: 7px;
+}
+.pressed {
+  --gap: -3px;
+}
+
+.br {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid var(--accent);
+  transition: transform 0.35s var(--ease-out);
+}
+.tl {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  transform: translate(calc(var(--gap) * -1), calc(var(--gap) * -1));
+}
+.tr {
+  top: 0;
+  right: 0;
+  border-left: 0;
+  border-bottom: 0;
+  transform: translate(var(--gap), calc(var(--gap) * -1));
+}
+.bl {
+  bottom: 0;
+  left: 0;
+  border-right: 0;
+  border-top: 0;
+  transform: translate(calc(var(--gap) * -1), var(--gap));
+}
+.brc {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+  transform: translate(var(--gap), var(--gap));
+}
+
+.label {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 14px);
+  transform: translate(-50%, -4px);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  color: var(--accent);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.35s var(--ease-out);
+}
+.ring[data-label="true"] .label {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+
+/* ================= ring variant ================= */
+.circle {
+  --size: 34px;
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  background: transparent;
+  box-sizing: border-box;
+  transition:
+    opacity 0.25s,
+    width 0.35s var(--ease-out),
+    height 0.35s var(--ease-out),
+    margin 0.35s var(--ease-out),
+    background-color 0.3s,
+    border-color 0.3s;
+}
+.circle[data-mode="link"] {
+  --size: 56px;
+  background: rgba(113, 56, 217, 0.12);
+}
+.circle[data-mode="link"][data-label="true"] {
+  --size: 64px;
+  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(17, 17, 20, 0.14);
+}
+.circle.pressed {
+  --size: 28px;
+}
+.circle .label {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
+}
+.circle[data-label="true"] .label {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+:global(html.has-custom-cursor) .layer[data-variant="ring"] .dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+}
+.layer[data-variant="ring"] .dot[data-mode="link"] {
+  opacity: 0;
+}
+
+
+/* ================= claw variant ================= */
+.layer[data-variant="claw"] .dot {
+  width: 7px;
+  height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+  transition: opacity 0.25s, transform 0.05s linear;
+}
+.layer[data-variant="claw"] .dot[data-mode="link"] {
+  width: 11px;
+  height: 11px;
+  margin: -5.5px 0 0 -5.5px;
+  background: transparent;
+  border: 2px solid var(--accent);
+}
+.layer[data-variant="claw"] .ring {
+  --size: 0px;
+}
+.layer[data-variant="claw"] .br {
+  display: none;
+}
+.layer[data-variant="claw"] .label {
+  top: 16px;
+}

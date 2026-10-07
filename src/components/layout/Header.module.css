@@ -1,0 +1,234 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.scrolled {
+  border-bottom-color: var(--line);
+  box-shadow: 0 1px 0 rgba(17, 17, 20, 0.02), 0 6px 20px rgba(17, 17, 20, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+/* メニュー展開中は backdrop-filter を外す（fixed 子要素の包含ブロックになるのを防ぐ） */
+.open {
+  background: var(--white);
+  border-bottom-color: var(--line);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: min(100% - var(--gutter) * 2, 1400px);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+}
+.logo {
+  width: 32px;
+  height: auto;
+}
+.brandText {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--fg-strong);
+}
+.brandText b {
+  color: var(--accent);
+  font-weight: inherit;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.navList {
+  display: flex;
+  gap: 4px;
+}
+.navLink {
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--fg);
+  transition: color 0.25s;
+}
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out);
+}
+.navLink:hover,
+.navLink:focus-visible,
+.navLink[aria-current="page"] {
+  color: var(--accent);
+}
+.navLink:hover::after,
+.navLink[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+.xLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--fg-strong);
+  color: #fff;
+  transform: skewX(var(--skew));
+  transition: background-color 0.25s;
+}
+.xLink svg {
+  width: 15px;
+  height: 15px;
+  transform: skewX(calc(var(--skew) * -1));
+}
+.xLink:hover {
+  background: var(--accent);
+}
+
+.toggle {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-right: -8px;
+}
+.toggleBar {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 2px;
+  background: var(--fg-strong);
+  transition: transform 0.35s var(--ease-out), top 0.35s var(--ease-out);
+}
+.toggleBar:nth-child(1) {
+  top: 17px;
+}
+.toggleBar:nth-child(2) {
+  top: 26px;
+}
+.toggle[aria-expanded="true"] .toggleBar:nth-child(1) {
+  top: 21px;
+  transform: rotate(45deg);
+}
+.toggle[aria-expanded="true"] .toggleBar:nth-child(2) {
+  top: 21px;
+  transform: rotate(-45deg);
+}
+
+/* ---- mobile panel ---- */
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--header-h) + 20px) var(--gutter) 28px;
+  background: var(--white);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out);
+}
+.panelOpen {
+  opacity: 1;
+}
+.panelList {
+  display: grid;
+}
+.panelList li {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.panelOpen .panelList li {
+  opacity: 1;
+  transform: none;
+}
+.panelLink {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.panelLinkEn {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(32px, 9vw, 48px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--fg-strong);
+}
+.panelLink:hover .panelLinkEn {
+  color: var(--accent);
+}
+.panelLinkJp {
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+.panelFoot {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.panelFoot :global(.btn) {
+  flex: 1 1 auto;
+}
+.panelClose {
+  flex: none;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+  .toggle {
+    display: block;
+  }
+  .panel {
+    display: flex;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .panelOpen {
+    pointer-events: auto;
+    visibility: visible;
+  }
+}
+@media (max-width: 400px) {
+  .brandText {
+    font-size: 16px;
+  }
+}

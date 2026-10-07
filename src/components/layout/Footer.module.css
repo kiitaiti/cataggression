@@ -1,0 +1,130 @@
+.footer {
+  position: relative;
+  background: var(--black);
+  color: #d9d6e0;
+  padding: 0 0 28px;
+}
+.stripe {
+  height: 4px;
+  background: var(--accent);
+}
+.top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr;
+  gap: 40px;
+  padding: clamp(40px, 5vw, 64px) 0 40px;
+}
+.brand {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+.logo {
+  width: 64px;
+  height: auto;
+  margin-bottom: 6px;
+}
+.teamName {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: #fff;
+}
+.teamName b {
+  color: var(--accent);
+  font-weight: inherit;
+}
+.tagline {
+  font-size: 13px;
+  color: #a39fae;
+  max-width: 34ch;
+}
+.col {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  justify-items: start;
+}
+.colTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.navList {
+  display: grid;
+  gap: 8px;
+}
+.navList a {
+  font-size: 14px;
+  color: #d9d6e0;
+  transition: color 0.25s;
+}
+.navList a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-color: var(--accent);
+}
+.xBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+.xBtn svg {
+  width: 15px;
+  height: 15px;
+}
+.xBtn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.copy {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a39fae;
+}
+.legal {
+  font-size: 12px;
+  color: #a39fae;
+}
+.legal:hover {
+  color: #fff;
+}
+@media (max-width: 840px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .brand {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 480px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+}
