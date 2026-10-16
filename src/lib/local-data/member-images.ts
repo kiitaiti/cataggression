@@ -18,12 +18,16 @@ export const MEMBER_IMAGES: Partial<Record<string, LocalImage>> = {
   meatoire: ICON("12-pink-hair-grin.jpg"),
   miso: ICON("15-miso.jpg"),
   tori: ICON("16-tori.jpg"),
+  pechiko: { url: "/images/members/pechiko.jpg", width: 1280, height: 1280 },
   // ---- STREAMERS（提供素材）----
   yowai: { url: "/images/members/yowai.jpg", width: 1210, height: 1600, position: "50% 12%" },
   "hanabishi-hachi": { url: "/images/members/hanabishi-hachi.jpg", width: 1600, height: 900, position: "34% 40%" },
-  mashuo55: ICON("10-white-hair-black-cat-plush.jpg"),
+  mashuo55: { url: "/images/members/mashuo55.png", width: 1218, height: 1400, position: "50% 20%" },
   nemura: { url: "/images/members/nemura.png", width: 985, height: 1400, position: "55% 8%" },
   asty: { url: "/images/members/asty.png", width: 708, height: 1070 },
   "kiraboshi-stella": { url: "/images/members/kiraboshi-stella.png", width: 591, height: 1400, position: "50% 6%" },
   mangle: { url: "/images/members/mangle.png", width: 525, height: 1400, position: "50% 6%" },
+  garyu: { url: "/images/members/garyu.jpg", width: 400, height: 400 },
+  mage: { url: "/images/members/mage.png", width: 1024, height: 1024 },
+  mogumogu: { url: "/images/members/mogumogu.png", width: 1000, height: 1000, position: "50% 30%" },
 };

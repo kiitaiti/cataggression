@@ -23,8 +23,13 @@
 | あすてぃ_ | `asty.png`（透過） | 708×1080 → 708×1070 |
 | 花菱はち | `hanabishi-hachi.jpg` | 1920×1080 → 1600×900 |
 | 宇宙怪獣まんぐる | `mangle.png`（透過） | 5000×8000 → 余白トリム後 525×1400（2026-10-07 提供） |
+| ましゅお55 | `mashuo55.png`（透過） | 3272×3760 → 1218×1400（2026-10-16 差し替え） |
+| 我竜 | `garyu.jpg` | 400×400（2026-10-16 提供） |
+| まげ | `mage.png`（透過） | 1024×1024（2026-10-16 提供） |
+| もぐもぐちゃーはん | `mogumogu.png`（透過） | 1000×1000（2026-10-16 提供） |
+| ぺちこ | `pechiko.jpg` | 1280×1280（2026-10-16 提供） |
 
-残り 7 名（VALORANT 6 名 + ましゅお55）は引き続き X アイコン（400×400）です。
+残り 6 名（VALORANT 選手 6 名）は引き続き X アイコン（400×400）です。
 
 ## X アイコンの対応（依頼者指定）
 
@@ -38,7 +43,7 @@
 | 鳥 | `tori` | `16-tori.jpg`（2026-10-02 提供） |
 | よわい | `yowai` | `05-white-beanie-cat-plush.jpg` |
 | 花菱はち | `hanabishi-hachi` | `11-orange-hair-chibi.jpg` **※要照合** |
-| ましゅお55 | `mashuo55` | `10-white-hair-black-cat-plush.jpg` |
+| ましゅお55 | `mashuo55` | ~~`10-white-hair-black-cat-plush.jpg`~~ → 2026-10-16 に `mashuo55.png` へ差し替え |
 | 清楚系大人大美女ねむら。 | `nemura` | `09-blue-hair-chibi-hoodie.jpg` |
 | あすてぃ_ | `asty` | `07-lightblue-short-hair.jpg` |
 | 煌星ステラ | `kiraboshi-stella` | `06-glasses-wafuku-pink.jpg` **※要照合** |

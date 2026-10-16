@@ -52,6 +52,14 @@ const seeds: Seed[] = [
     sortOrder: 6,
     socialLinks: [{ service: "x", url: "https://x.com/famima0725" }],
   },
+  {
+    slug: "pechiko",
+    name: "ぺちこ",
+    division: "valorant",
+    sortOrder: 7,
+    role: "VALORANT部門マネージャー",
+    socialLinks: [{ service: "x", url: "https://x.com/pesiico" }],
+  },
 
   // ---------------- STREAMERS ----------------
   {
@@ -130,6 +138,41 @@ const seeds: Seed[] = [
       { service: "x", url: "https://x.com/Galaxyforce2010" },
       { service: "youtube", url: "https://www.youtube.com/@vtubermangle" },
       { service: "twitch", url: "https://www.twitch.tv/katsudonrush" },
+    ],
+  },
+  {
+    slug: "garyu",
+    name: "我竜",
+    division: "streamer",
+    sortOrder: 8,
+    role: "歌い手 / MIX師",
+    shortBio: "歌い手兼MIX師。",
+    socialLinks: [
+      { service: "x", url: "https://x.com/GaRyu0u" },
+      { service: "youtube", url: "https://www.youtube.com/@-GaRyu-527" },
+    ],
+  },
+  {
+    slug: "mage",
+    name: "まげ",
+    division: "streamer",
+    sortOrder: 9,
+    role: "ストリーマー部門マネージャー",
+    socialLinks: [
+      { service: "x", url: "https://x.com/mamama_mage" },
+      { service: "twitch", url: "https://www.twitch.tv/mamama_mage" },
+    ],
+  },
+  {
+    slug: "mogumogu",
+    name: "もぐもぐちゃーはん",
+    division: "streamer",
+    sortOrder: 10,
+    role: "ストリーマー部門マネージャー",
+    socialLinks: [
+      { service: "x", url: "https://x.com/mogumogu_1130" },
+      { service: "youtube", url: "https://www.youtube.com/@mogumogu_1130" },
+      { service: "twitch", url: "https://www.twitch.tv/mogumogu_1130" },
     ],
   },
 ];
