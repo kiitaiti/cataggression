@@ -29,14 +29,14 @@
 | もぐもぐちゃーはん | `mogumogu.png`（透過） | 1000×1000（2026-10-16 提供） |
 | ぺちこ | `pechiko.jpg` | 1280×1280（2026-10-16 提供） |
 
-残り 6 名（VALORANT 選手 6 名）は引き続き X アイコン（400×400）です。
+残り 5 名（VALORANT 選手 5 名）は引き続き X アイコン（400×400）。seta（2026-10-17 追加）は提供アイコン `seta.jpg`（400×400）を使用。
 
 ## X アイコンの対応（依頼者指定）
 
 | メンバー | slug | ファイル |
 | --- | --- | --- |
 | N4YUT4 | `n4yut4` | `02-glasses-gun-black.jpg` |
-| findingnimo | `findingnimo` | `01-cat-photo.jpg` |
+| ~~findingnimo~~ | `findingnimo` | `01-cat-photo.jpg`（2026-10-17 メンバーから削除、画像は未使用） |
 | kosty | `kosty` | `14-spider-comic.jpg` |
 | Meatoire | `meatoire` | `12-pink-hair-grin.jpg` |
 | みそ | `miso` | `15-miso.jpg`（2026-10-02 提供） |

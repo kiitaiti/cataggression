@@ -18,13 +18,6 @@ const seeds: Seed[] = [
     socialLinks: [{ service: "x", url: "https://x.com/IAS_nayuta_rrkn" }],
   },
   {
-    slug: "findingnimo",
-    name: "findingnimo",
-    division: "valorant",
-    sortOrder: 2,
-    socialLinks: [{ service: "x", url: "https://x.com/nimoinitiator" }],
-  },
-  {
     slug: "kosty",
     name: "kosty",
     division: "valorant",
@@ -57,8 +50,14 @@ const seeds: Seed[] = [
     name: "ぺちこ",
     division: "valorant",
     sortOrder: 7,
-    role: "VALORANT部門マネージャー",
     socialLinks: [{ service: "x", url: "https://x.com/pesiico" }],
+  },
+  {
+    slug: "seta",
+    name: "seta",
+    division: "valorant",
+    sortOrder: 8,
+    socialLinks: [{ service: "x", url: "https://x.com/SK_VLRT" }],
   },
 
   // ---------------- STREAMERS ----------------
