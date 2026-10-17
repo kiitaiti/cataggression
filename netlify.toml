@@ -1,0 +1,8 @@
+# Netlify 用の設定。GitHub 連携で自動デプロイするときに読み込まれます。
+# Next.js は Netlify が自動検出して専用ランタイム（@netlify/plugin-nextjs）を適用します。
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
