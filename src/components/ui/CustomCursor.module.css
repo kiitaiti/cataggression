@@ -159,26 +159,26 @@
 }
 
 
-/* ================= claw variant ================= */
-.layer[data-variant="claw"] .dot {
+/* ================= bolt variant ================= */
+.layer[data-variant="bolt"] .dot {
   width: 7px;
   height: 7px;
   margin: -3.5px 0 0 -3.5px;
   transition: opacity 0.25s, transform 0.05s linear;
 }
-.layer[data-variant="claw"] .dot[data-mode="link"] {
+.layer[data-variant="bolt"] .dot[data-mode="link"] {
   width: 11px;
   height: 11px;
   margin: -5.5px 0 0 -5.5px;
   background: transparent;
   border: 2px solid var(--accent);
 }
-.layer[data-variant="claw"] .ring {
+.layer[data-variant="bolt"] .ring {
   --size: 0px;
 }
-.layer[data-variant="claw"] .br {
+.layer[data-variant="bolt"] .br {
   display: none;
 }
-.layer[data-variant="claw"] .label {
+.layer[data-variant="bolt"] .label {
   top: 16px;
 }

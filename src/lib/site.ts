@@ -29,10 +29,10 @@ export const NAV_ITEMS = [
 
 /**
  * カスタムカーソルの見た目:
- *   "claw"    : 紫の点 + 動きに沿って 3 本の爪痕が残り、約 0.9 秒で消える（既定）
+ *   "bolt"    : 紫の点 + 動きに沿って細い紫の稲妻が残り、約 0.4 秒で消える（既定）
  *   "ring"    : 紫の点 + 細い円
  *   "bracket" : 紫の点 + 4 本のブラケット
- * URL に ?cursor=claw|ring|bracket を付けるとそのセッション中だけ切り替わる。
+ * URL に ?cursor=bolt|ring|bracket を付けるとそのセッション中だけ切り替わる。
  */
-export type CursorVariant = "claw" | "ring" | "bracket";
-export const CURSOR_VARIANT: CursorVariant = "claw";
+export type CursorVariant = "bolt" | "ring" | "bracket";
+export const CURSOR_VARIANT: CursorVariant = "bolt";

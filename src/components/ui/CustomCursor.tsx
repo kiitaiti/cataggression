@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./CustomCursor.module.css";
 import { CURSOR_VARIANT, type CursorVariant } from "@/lib/site";
-import { ClawTrail } from "./ClawTrail";
+import { BoltTrail } from "./BoltTrail";
 
 /**
  * サイト全体のカスタムカーソル。
@@ -15,10 +15,10 @@ import { ClawTrail } from "./ClawTrail";
  * - 初期化に成功したときだけ html.has-custom-cursor を付けて標準カーソルを隠す
  *
  * 見た目は 3 種類:
- *   claw    : 紫の点 + 軌跡に猫の爪痕（3 本の引っかき線）が残って消える（ClawTrail.tsx）
+ *   bolt    : 紫の点 + 軌跡に細い紫の稲妻（ジグザグ線＋淡い光）が残って消える（BoltTrail.tsx）
  *   ring    : 紫の点 + 細い円。リンク上で円が広がり薄い紫で塗られ、ラベルは円の中に表示
  *   bracket : 紫の点 + 4 本のブラケット。リンク上でブラケットが開く
- * 既定は lib/site.ts の CURSOR_VARIANT。比較用に URL の ?cursor=claw|ring|bracket でも切り替え可能。
+ * 既定は lib/site.ts の CURSOR_VARIANT。比較用に URL の ?cursor=bolt|ring|bracket でも切り替え可能。
  */
 export function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
@@ -28,7 +28,7 @@ export function CustomCursor() {
 
   useEffect(() => {
     const q = new URLSearchParams(window.location.search).get("cursor");
-    if (q === "ring" || q === "bracket" || q === "claw") {
+    if (q === "ring" || q === "bracket" || q === "bolt") {
       setVariant(q);
       try {
         sessionStorage.setItem("cursor-variant", q);
@@ -38,7 +38,7 @@ export function CustomCursor() {
     } else {
       try {
         const saved = sessionStorage.getItem("cursor-variant");
-        if (saved === "ring" || saved === "bracket" || saved === "claw") setVariant(saved);
+        if (saved === "ring" || saved === "bracket" || saved === "bolt") setVariant(saved);
       } catch {
         /* ignore */
       }
@@ -108,7 +108,7 @@ export function CustomCursor() {
 
     const tick = () => {
       // ブラケットは緩やかに追従（遅れすぎるとクリック位置が分からなくなるので係数は高め）
-      const k = variant === "ring" ? 0.22 : variant === "claw" ? 0.35 : 0.28;
+      const k = variant === "ring" ? 0.22 : variant === "bolt" ? 0.35 : 0.28;
       rx += (tx - rx) * k;
       ry += (ty - ry) * k;
       dot.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
@@ -154,7 +154,7 @@ export function CustomCursor() {
 
   return (
     <>
-    <ClawTrail enabled={variant === "claw"} />
+    <BoltTrail enabled={variant === "bolt"} />
     <div className={styles.layer} aria-hidden="true" data-variant={variant}>
       <div ref={dotRef} className={styles.dot} />
       <div ref={ringRef} className={variant === "ring" ? styles.circle : styles.ring}>

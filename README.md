@@ -127,13 +127,13 @@ CAT AGGRESSION では **白・黒・紫** で再構成しています（ロゴ�
 **削除済み**です。参照・イベント登録・画像取得は残っていません。
 
 ## 7. カスタムカーソル（3 種類）
-- `claw`（既定）: 紫の点 + **猫の爪痕**。マウスの軌跡に沿って 3 本の平行な引っかき線が短く残り、約 0.55 秒で細くなりながら消えます（不透明度は最大 70% の控えめな表現）
-  （`src/components/ui/ClawTrail.tsx`）。速く動かすほど太い爪痕になり、止まっている間は何も描きません。
+- `bolt`（既定）: 紫の点 + **紫の稲妻**。マウスの軌跡に沿って細いジグザグの線が淡い光をまとって短く残り、約 0.4 秒で消えます（線 1.4px・不透明度最大 65% の落ち着いた表現。ところどころに短い枝分かれ）
+  （`src/components/ui/BoltTrail.tsx`）。止まっている間は何も描きません。
   全画面の 2D Canvas（`pointer-events: none`、`mix-blend-mode: multiply`）に描画し、跡が消えたら描画ループを止めます。
   太さ・間隔・持続時間は同ファイル冒頭の `LIFE` / `CLAWS` と `onMove` 内の太さ式で調整できます
 - `ring`: 紫の点 + 細い円。リンク上で円が広がり薄紫に、ラベル付き要素では白い円の中に「VIEW / WATCH / READ」を表示
 - `bracket`: 紫の点 + 4 本のブラケット。リンク上でブラケットが開き、下にラベルを表示
-- 既定は `src/lib/site.ts` の `CURSOR_VARIANT`。比較用に URL に `?cursor=claw` / `?cursor=ring` / `?cursor=bracket` を付けると
+- 既定は `src/lib/site.ts` の `CURSOR_VARIANT`。比較用に URL に `?cursor=bolt` / `?cursor=ring` / `?cursor=bracket` を付けると
   そのセッションの間だけ切り替わります
 - 初期化に成功した場合のみ `html.has-custom-cursor` を付与して標準カーソルを隠す
 - 入力欄・テキスト選択中は標準カーソル。タッチ端末・reduced-motion では無効
