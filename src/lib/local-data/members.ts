@@ -68,6 +68,8 @@ const seeds: Seed[] = [
     sortOrder: 1,
     socialLinks: [
       { service: "x", url: "https://x.com/yowasugi_warot" },
+      { service: "youtube", url: "https://www.youtube.com/channel/UCW2DAzMCGx9PGPBAxlv0MYg" },
+      { service: "twitch", url: "https://www.twitch.tv/nyamu9897" },
       { service: "litlink", label: "関連リンク", url: "https://lit.link/yowai3" },
     ],
   },
@@ -80,6 +82,8 @@ const seeds: Seed[] = [
     games: ["ブロスタ", "VALORANT"],
     socialLinks: [
       { service: "x", url: "https://x.com/hanabc1213" },
+      { service: "youtube", url: "https://www.youtube.com/@hanabc8" },
+      { service: "twitch", url: "https://www.twitch.tv/hanabc1213" },
       { service: "litlink", label: "関連リンク", url: "https://lit.link/hanabc" },
     ],
   },
@@ -109,10 +113,12 @@ const seeds: Seed[] = [
     name: "あすてぃ_",
     division: "streamer",
     sortOrder: 5,
-    shortBio: "ゲーム配信。APEX・VALORANTを中心にプレイ。",
-    games: ["APEX", "VALORANT"],
+    shortBio: "主にタルコフ、Apexを中心にプレイ。",
+    games: ["タルコフ", "Apex"],
     socialLinks: [
       { service: "x", url: "https://x.com/xxasti38" },
+      { service: "youtube", url: "https://www.youtube.com/@xxasti38" },
+      { service: "twitch", url: "https://www.twitch.tv/xxasti38" },
       { service: "litlink", label: "関連リンク", url: "https://lit.link/xxasti38" },
     ],
   },
@@ -124,6 +130,8 @@ const seeds: Seed[] = [
     shortBio: "ストリーマー・動画制作。",
     socialLinks: [
       { service: "x", url: "https://x.com/StelLa_StAR0411" },
+      { service: "youtube", url: "https://www.youtube.com/@stella_ch_411" },
+      { service: "twitch", url: "https://www.twitch.tv/kiraboshistella" },
       { service: "litlink", label: "関連リンク", url: "https://lit.link/KiraboshiStella" },
     ],
   },

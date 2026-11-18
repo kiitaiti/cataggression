@@ -45,7 +45,7 @@ export function Vision({ compact = false }: { compact?: boolean }) {
             <div className={styles.roadHead} data-reveal>
               <p className="sec-eyebrow">Roadmap</p>
               <h2 className={styles.roadTitle}>
-                VCJを、<em>その先</em>への一歩に。
+                VCJから、<em>その先</em>の舞台へ。
               </h2>
             </div>
             <ol className={styles.road}>
